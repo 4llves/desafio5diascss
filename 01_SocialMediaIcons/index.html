@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/phosphor-icons"></script>
+
+  <title>Social Media Icons</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="socialMedia">
+    <ul class="sci">
+      <li data-text="/4llves" data-color="#0e76a8">
+        <a href="https://www.linkedin.com/in/4llves" target="_blank" class="linkedin">
+          <i class="ph-linkedin-logo"></i>
+        </a>
+      </li>
+
+      <li data-text="@4llves_" data-color="#FF0000">
+        <a href="https://www.youtube.com/@4llves_" target="_blank" class="youtube">
+          <i class="ph-youtube-logo"></i>
+        </a>
+      </li>
+
+      <li data-text="@4llves" data-color="#0099FF">
+        <a href="https://twitter.com/4llves" target="_blank" class="twitter">
+          <i class="ph-twitter-logo"></i>
+        </a>
+      </li>
+
+      <li data-text="@4llves_" data-color="#E4405F">
+        <a href="https://www.instagram.com/4llves_/?theme=dark" target="_blank" class="instagram">
+          <i class="ph-instagram-logo"></i>
+        </a>
+      </li>
+
+      <li data-text="@4llves" data-color="#6441A5">
+        <a href="https://www.twitch.tv/4llves" target="_blank" class="twitch">
+          <i class="ph-twitch-logo"></i>
+        </a>
+      </li>
+
+      <li data-text="@4llves" data-color="#171515">
+        <a href="https://github.com/4llves" target="_blank" class="github">
+          <i class="ph-github-logo"></i>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <script src="vanilla-tilt.min.js"></script>
+
+  <script>
+
+    VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+      max: 40,
+      speed: 400,
+      glare: true,
+      "max-glare": 1,
+    });
+
+
+    let list = document.querySelectorAll('.sci li');
+    let bg = document.querySelector('.socialMedia');
+
+    list.forEach(elements => {
+      elements.addEventListener('mouseenter', function (e) {
+        let color = e.target.getAttribute('data-color');
+        bg.style.backgroundColor = color;
+      })
+
+      elements.addEventListener('mouseleave', function (e) {
+        bg.style.backgroundColor = "#FFF";
+      })
+    })
+  </script>
+
+</body>
+
+</html>
